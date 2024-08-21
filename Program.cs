@@ -26,7 +26,7 @@ var host = new HostBuilder()
         services.ConfigureFunctionsApplicationInsights();
         services.AddHttpClient("apim",client =>
         {
-            var apimBaseAddress = config.GetSection("SqlConfiguration:ConnectionString").Value;
+            var apimBaseAddress = config.GetSection("ApimConfiguration:BaseAddress").Value;
 
             client.BaseAddress = new Uri(apimBaseAddress);
             var cred = new DefaultAzureCredential();
